@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+bool isanagram(string &str1, string &str2)
+{
+    if(str1.length() != str2.length()) return 0;
+    int count[256]={0}; 
+    for(int i=0;i<str1.length();i++){
+        count[str1[i]]++;
+        count[str2[i]]--;
+    }
+    for(int i=0;i<256;i++){
+        if(count[i] != 0)
+        return false;
+    }
+    return true;
+    
+}
+
+int main()
+{
+    string str1 = "abcdefg";
+    string str2 = "egadfbc";
+    if(1==isanagram(str1,str2)) cout<<"Yes anagram of each other";
+    else {
+    cout<<"No not a anagram of each other";
+    }    
+    return 0;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
